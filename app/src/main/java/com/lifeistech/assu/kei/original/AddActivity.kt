@@ -13,6 +13,7 @@ import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_add.*
 import android.Manifest
 import io.realm.Realm
+import kotlinx.android.synthetic.main.activity_main.*
 import java.io.ByteArrayOutputStream
 import java.util.*
 class Add : AppCompatActivity() {
@@ -39,7 +40,7 @@ class Add : AppCompatActivity() {
             startActivity(intent)
         }
 
-        confirm_Button.setOnClickListener {
+        add_Button.setOnClickListener {
             create(name_editText.text.toString(), barcode_editText.text.toString())
             Toast.makeText(applicationContext, "Added to Wishlist!", Toast.LENGTH_SHORT).show()
             name_editText.setText("")

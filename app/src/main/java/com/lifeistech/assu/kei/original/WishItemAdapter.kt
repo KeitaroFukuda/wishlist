@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AbsListView
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -41,6 +42,11 @@ class WishItemAdapter(
         val v = LayoutInflater.from(context).inflate(R.layout.list_item, viewGroup, false)
         return WishItemViewHolder(v)
     }
+
+    //override fun onSwiped(viewHolder: WishItemAdapter.WishItemViewHolder, direction: Int) {
+
+
+    //}
 
     class WishItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val nameTextView: TextView = view.nameTextView

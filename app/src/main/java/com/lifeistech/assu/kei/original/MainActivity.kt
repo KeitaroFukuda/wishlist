@@ -11,6 +11,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // リスナー
         listButton.setOnClickListener {
             val intent = Intent(application, ListActivity::class.java)
             startActivity(intent)
