@@ -33,14 +33,13 @@
             android:inputType="textPersonName"
             android:textColor="#43403F" />
 
-        <EditText
-            android:id="@+id/barcode_editText"
+        <TextView
+            android:id="@+id/barcode_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:ems="10"
             android:hint="Barcode"
-            android:inputType="textPersonName"
             android:textColor="#43403F" />
 
         <LinearLayout
@@ -82,7 +81,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:text="Add"
+            android:text="Add To WishList"
             android:textSize="30sp" />
 
     </LinearLayout>

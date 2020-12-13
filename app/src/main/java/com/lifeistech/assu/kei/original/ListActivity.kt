@@ -102,14 +102,14 @@ class ListActivity : AppCompatActivity() {
             }
 
 
-            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+            //override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
 
                 //削除対象を取得
-                var wishItem = realm.where(WishItem::class.java)
+               // var wishItem = realm.where(WishItem::class.java)
 
-                WishItem wishitem =results.get(1)
-                wishitem.deleteFromRealm()
-            }
+                //WishItem wishitem =results.get(1)
+                //wishitem.deleteFromRealm()
+            //}
 
             override fun onChildDraw(
                 c: Canvas,

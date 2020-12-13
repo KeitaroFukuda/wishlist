@@ -41,10 +41,10 @@ class Add : AppCompatActivity() {
         }
 
         add_Button.setOnClickListener {
-            create(name_editText.text.toString(), barcode_editText.text.toString())
+            create(name_editText.text.toString(), barcode_textview.text.toString())
             Toast.makeText(applicationContext, "Added to Wishlist!", Toast.LENGTH_SHORT).show()
             name_editText.setText("")
-            barcode_editText.setText("")
+            barcode_textview.setText("")
             camera_imageButton.setImageResource(R.drawable.camera)
             barcode_imageButton.setImageResource(R.drawable.barcode)
 

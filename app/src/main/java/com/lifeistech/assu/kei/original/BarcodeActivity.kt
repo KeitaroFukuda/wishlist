@@ -2,6 +2,7 @@ package com.lifeistech.assu.kei.original
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.zxing.integration.android.IntentIntegrator
 import com.google.zxing.integration.android.IntentResult
@@ -16,42 +17,43 @@ class BarcodeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_barcode)
 
-        btnScan.setOnClickListener {
+        barcode_imageButton.setOnClickListener {
             run {
                 IntentIntegrator(this@BarcodeActivity).initiateScan();
             }
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    override fun onActivityResult(requestCode: Int,resultCode: Int,data: Intent?){
 
-        startActivity(intent)
+        var result:IntentResult? = IntentIntegrator.parseActivityResult(requestCode,resultCode,data)
 
-        var result: IntentResult? = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
-
-        if(result != null){
+        if(result !=null){
 
             if(result.contents != null){
-                barcode_editText.setText(result.contents)
+                scannedResult = result.contents
+                barcode_textview.text= scannedResult
+            } else {
+                barcode_textview.text ="scan failed"
             }
-
-        } else {
+        }else{
             super.onActivityResult(requestCode, resultCode, data)
         }
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-
-        outState.putString("scannedResult", scannedResult)
-        super.onSaveInstanceState(outState)
+    override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
+        outState?.putString("scannedResult", scannedResult)
+        super.onSaveInstanceState(outState, outPersistentState)
     }
 
-    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
 
-        savedInstanceState?.let {
-            scannedResult = it.getString("scannedResult").toString()
-            barcode_editText.setText (scannedResult)
+        savedInstanceState?.let{
+            scannedResult= it.getString("scannedResult")!!
+            barcode_textview.text= scannedResult
         }
     }
+
+
 }
