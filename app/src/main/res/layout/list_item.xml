@@ -38,7 +38,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="2"
                 android:gravity="center_vertical"
-                android:text="やること"
+                android:text="   Name"
                 android:textSize="18sp" />
 
             <TextView
@@ -46,7 +46,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="2"
-                android:text="TextView" />
+                android:text="   URL"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:text="   Barcode"
+                android:textSize="18sp" />
 
         </LinearLayout>
 
