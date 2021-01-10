@@ -16,8 +16,6 @@
         <activity android:name=".AddActivity"></activity>
         <activity android:name=".BarcodeActivity" />
         <activity android:name=".SpecificItem" />
-        <activity android:name=".Barcode" />
-        <activity android:name=".Add" />
         <activity android:name=".ListActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

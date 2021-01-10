@@ -16,7 +16,7 @@ import io.realm.Realm
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.ByteArrayOutputStream
 import java.util.*
-class Add : AppCompatActivity() {
+class AddActivity : AppCompatActivity() {
 
     var bitmapImageData: Bitmap? = null
     var scannedResult: String = ""

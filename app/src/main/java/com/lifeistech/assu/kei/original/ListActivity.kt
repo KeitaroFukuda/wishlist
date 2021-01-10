@@ -27,16 +27,16 @@ import java.util.*
 
 class ListActivity : AppCompatActivity() {
 
-    val wishList = readAll()
-
     private val realm: Realm by lazy {
         Realm.getDefaultInstance()
     }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list)
 
+        val wishList = readAll()
 
         // タスクリストが空だったときにダミーデータを生成する
 //        if (wishList.isEmpty()) {

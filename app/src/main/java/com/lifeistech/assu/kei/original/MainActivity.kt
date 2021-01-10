@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         //画面遷移
         add_Button.setOnClickListener {
-            val intent = Intent(application, Add::class.java)
+            val intent = Intent(application, AddActivity::class.java)
             startActivity(intent)
         }
     }
