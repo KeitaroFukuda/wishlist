@@ -12,5 +12,7 @@ open class WishItem(
     @PrimaryKey open var id: String = UUID.randomUUID().toString(),
     open var image: ByteArray? = null,
     open var name: String = "",
-    open var url: String = ""
+    open var url: String = "",
+    open var barcode: String = ""
+
 ) : RealmObject()
