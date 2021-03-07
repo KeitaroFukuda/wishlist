@@ -13,17 +13,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddActivity"></activity>
-        <activity android:name=".BarcodeActivity" />
-        <activity android:name=".SpecificItem" />
-        <activity android:name=".ListActivity" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity2"
+            android:label="@string/title_activity_main2"></activity>
+        <activity android:name=".activity_add2" />
+        <activity android:name=".AddActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".BarcodeActivity" />
+        <activity android:name=".SpecificItem" />
+        <activity android:name=".ListActivity" />
     </application>
 
 </manifest>

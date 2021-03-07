@@ -10,12 +10,13 @@ import android.provider.MediaStore
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import kotlinx.android.synthetic.main.activity_add.*
+import kotlinx.android.synthetic.main.Activity_Add.*
 import android.Manifest
 import io.realm.Realm
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_add2.*
 import java.io.ByteArrayOutputStream
 import java.util.*
+
 class AddActivity : AppCompatActivity() {
 
     var bitmapImageData: Bitmap? = null
@@ -33,14 +34,14 @@ class AddActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add)
+        setContentView(R.layout.Activity_Add)
 
         barcode_imageButton.setOnClickListener {
             val intent = Intent(application, BarcodeActivity::class.java)
             startActivity(intent)
         }
 
-        add_Button.setOnClickListener {
+        addtowishlist_button.setOnClickListener {
             create(name_editText.text.toString(), barcode_textview.text.toString())
             Toast.makeText(applicationContext, "Added to Wishlist!", Toast.LENGTH_SHORT).show()
             name_editText.setText("")
@@ -48,11 +49,19 @@ class AddActivity : AppCompatActivity() {
             camera_imageButton.setImageResource(R.drawable.camera)
             barcode_imageButton.setImageResource(R.drawable.barcode)
 
+            //val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
+            //val time = sdf.format(Date())
         }
     }
 
     override fun onResume() {
         super.onResume()
+
+        next_button.setOnClickListener {
+            val intent = Intent(application, activity_add2::class.java)
+            startActivity(intent)
+        }
+
 
 
         camera_imageButton.setOnClickListener {
@@ -70,8 +79,8 @@ class AddActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == CAMERA_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
-            val image = data?.extras?.get("data")?.let {
-                camera_imageButton.setImageBitmap(it as Bitmap)
+            data?.extras?.get("data")?.let {
+                setimage_imageview.setImageBitmap(it as Bitmap)
                 bitmapImageData = it
             }
         }

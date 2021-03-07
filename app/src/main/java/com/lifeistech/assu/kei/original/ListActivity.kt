@@ -90,6 +90,8 @@ class ListActivity : AppCompatActivity() {
             realm.deleteAll()
         }
     }
+
+    
 //
 //    private fun getSwipeToDismissTouchHelper(adapter: RecyclerView.Adapter<RecyclerView.ViewHolder>) =
 //        ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(
