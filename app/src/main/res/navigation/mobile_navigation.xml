@@ -9,12 +9,21 @@
         android:id="@+id/AddFragment"
         android:name="com.lifeistech.assu.kei.original.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+    <action
+    android:id="@+id/action_first_to_second"
+    app:destination="@id/Add2Fragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/ListFragment"
         android:name="com.lifeistech.assu.kei.original.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
+    <fragment
+        android:id="@+id/Add2Fragment"
+        android:name="com.lifeistech.assu.kei.original.Add2Fragment"
+        android:label="fragment_add2"
+        tools:layout="@layout/fragment_add2" />
 
 </navigation>

@@ -1,5 +1,6 @@
 package com.lifeistech.assu.kei.original
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
 import androidx.fragment.app.Fragment
@@ -7,18 +8,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.google.zxing.integration.android.IntentIntegrator
+import com.google.zxing.integration.android.IntentResult
 import kotlinx.android.synthetic.main.Activity_Add.*
 import kotlinx.android.synthetic.main.activity_barcode.*
 
 
 class BarcodeFragment : Fragment() {
-
     var scannedResult: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        btnScan.setOnClickListener {
+        view.btnScan.setOnClickListener {
             run {
                 IntentIntegrator(this@BarcodeFragment).initiateScan();
             }
@@ -32,7 +33,9 @@ class BarcodeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
 
-        var result:IntentResult? = IntentIntegrator.parseActivityResult(requestCode,resultCode,data)
+        override fun onActivityResult(requestCode: Int,resultCode: Int,data: Intent?){
+
+        var result: IntentResult? = IntentIntegrator.parseActivityResult(requestCode,resultCode,data)
 
         if(result !=null){
 
@@ -65,8 +68,8 @@ class BarcodeFragment : Fragment() {
 }
 
 val view = inflater.inflate(R.layout.fragment_barcode, container, false)
-    }
 
 
-}
+
+
 

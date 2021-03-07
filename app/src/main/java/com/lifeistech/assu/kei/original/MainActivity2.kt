@@ -7,8 +7,8 @@ import kotlinx.android.synthetic.main.activity_main2.*
 
 class MainActivity2 : AppCompatActivity() {
 
-    private val addFragment: AddActivity = AddActivity()
-    private val listFragment: ListActivity = ListActivity()
+    private val addFragment: AddFragment = AddFragment()
+    private val listFragment: ListFragment = ListFragment()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
